@@ -65,11 +65,11 @@ export class ReservationService {
         }
 
         await this.userService.updatePoint(userId, 'buy', totalPrice);
-        const remainPoint = this.userService.findPoint(userId);
+        const remainPoint = await this.userService.findPoint(userId);
 
         await this.reservationRepository.update({ id: newReservation.id }, { totalPrice: totalPrice });
 
-        return { message: "예매 완료!", "잔여 포인트": remainPoint }; 
+        return { message: "예매 완료!", "잔여 포인트": remainPoint.point }; 
     }
 
     async myTicket(userId: number) {

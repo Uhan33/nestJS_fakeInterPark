@@ -1,6 +1,6 @@
-import { Reservation } from 'src/reservation/entities/reservation.entity';
+import { Reservation } from '../../reservation/entities/reservation.entity';
 import { ConcertHall } from '../../concert-hall/entities/concertHall.entity';
-import { ReservationInfo } from 'src/reservation/entities/reservationInfo.entity';
+import { ReservationInfo } from '../../reservation/entities/reservationInfo.entity';
 export declare class Show {
     id: number;
     concertHallId: number;

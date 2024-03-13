@@ -1,6 +1,6 @@
 import { Role } from '../types/userRole.type';
 import { Point } from './point.entity';
-import { Reservation } from 'src/reservation/entities/reservation.entity';
+import { Reservation } from '../../reservation/entities/reservation.entity';
 export declare class User {
     id: number;
     email: string;

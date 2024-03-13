@@ -93,6 +93,6 @@ export class UserService {
     if(status === 'cancel')
       return await this.pointRepository.update({userId}, {point: remainPoint.point + price});
 
-    return await this.pointRepository.update({userId}, {point: remainPoint.point + price});
+    return await this.pointRepository.update({userId}, {point: remainPoint.point - price});
   }
 }

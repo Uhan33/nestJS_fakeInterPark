@@ -1,7 +1,7 @@
 import { ReservationService } from './reservation.service';
 import { BuyTicketDto } from './dto/buyTicket.dto';
-import { User } from 'src/user/entities/user.entity';
-import { Point } from 'src/user/entities/point.entity';
+import { User } from '../user/entities/user.entity';
+import { Point } from '../user/entities/point.entity';
 export declare class ReservationController {
     private readonly reservationService;
     constructor(reservationService: ReservationService);
@@ -10,7 +10,7 @@ export declare class ReservationController {
         point: Point;
     }): Promise<{
         message: string;
-        "\uC794\uC5EC \uD3EC\uC778\uD2B8": Promise<Point>;
+        "\uC794\uC5EC \uD3EC\uC778\uD2B8": number;
     }>;
     myTicket(info: {
         user: User;

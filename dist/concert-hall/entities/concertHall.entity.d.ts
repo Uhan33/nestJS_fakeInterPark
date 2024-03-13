@@ -1,4 +1,4 @@
-import { Show } from 'src/show/entities/show.entity';
+import { Show } from '../../show/entities/show.entity';
 import { SeatInfo } from './seatInfo.entity';
 export declare class ConcertHall {
     id: number;

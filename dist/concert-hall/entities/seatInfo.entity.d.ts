@@ -1,5 +1,5 @@
 import { ConcertHall } from './concertHall.entity';
-import { ReservationInfo } from 'src/reservation/entities/reservationInfo.entity';
+import { ReservationInfo } from '../../reservation/entities/reservationInfo.entity';
 export declare class SeatInfo {
     id: string;
     concertHallId: number;

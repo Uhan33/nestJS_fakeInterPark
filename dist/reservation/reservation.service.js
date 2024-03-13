@@ -66,9 +66,9 @@ let ReservationService = class ReservationService {
             throw new common_1.BadRequestException('포인트가 부족하여 예매할 수 없습니다.');
         }
         await this.userService.updatePoint(userId, 'buy', totalPrice);
-        const remainPoint = this.userService.findPoint(userId);
+        const remainPoint = await this.userService.findPoint(userId);
         await this.reservationRepository.update({ id: newReservation.id }, { totalPrice: totalPrice });
-        return { message: "예매 완료!", "잔여 포인트": remainPoint };
+        return { message: "예매 완료!", "잔여 포인트": remainPoint.point };
     }
     async myTicket(userId) {
         const tickets = await this.reservationRepository.find({

@@ -87,7 +87,7 @@ let UserService = class UserService {
         const remainPoint = await this.findPoint(userId);
         if (status === 'cancel')
             return await this.pointRepository.update({ userId }, { point: remainPoint.point + price });
-        return await this.pointRepository.update({ userId }, { point: remainPoint.point + price });
+        return await this.pointRepository.update({ userId }, { point: remainPoint.point - price });
     }
 };
 exports.UserService = UserService;

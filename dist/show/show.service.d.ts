@@ -1,7 +1,7 @@
 import { Show } from './entities/show.entity';
 import { Repository } from 'typeorm';
-import { ConcertHallService } from 'src/concert-hall/concert-hall.service';
-import { ReservationInfo } from 'src/reservation/entities/reservationInfo.entity';
+import { ConcertHallService } from '../concert-hall/concert-hall.service';
+import { ReservationInfo } from '../reservation/entities/reservationInfo.entity';
 export declare class ShowService {
     private showRepository;
     private reservationInfoRepository;

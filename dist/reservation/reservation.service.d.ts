@@ -1,9 +1,9 @@
 import { Reservation } from './entities/reservation.entity';
 import { Repository } from 'typeorm';
 import { ReservationInfo } from './entities/reservationInfo.entity';
-import { ShowService } from 'src/show/show.service';
-import { ConcertHallService } from 'src/concert-hall/concert-hall.service';
-import { UserService } from 'src/user/user.service';
+import { ShowService } from '../show/show.service';
+import { ConcertHallService } from '../concert-hall/concert-hall.service';
+import { UserService } from '../user/user.service';
 export declare class ReservationService {
     private reservationRepository;
     private reservationInfoRepository;
@@ -13,7 +13,7 @@ export declare class ReservationService {
     constructor(reservationRepository: Repository<Reservation>, reservationInfoRepository: Repository<ReservationInfo>, showService: ShowService, concertHallService: ConcertHallService, userService: UserService);
     buyTicket(userId: number, point: number, showId: number, people: number, seatInfo: JSON[]): Promise<{
         message: string;
-        "\uC794\uC5EC \uD3EC\uC778\uD2B8": Promise<import("src/user/entities/point.entity").Point>;
+        "\uC794\uC5EC \uD3EC\uC778\uD2B8": number;
     }>;
     myTicket(userId: number): Promise<{
         ticketID: string;

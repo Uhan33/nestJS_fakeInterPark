@@ -3,11 +3,11 @@ import { Reservation } from './entities/reservation.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ReservationInfo } from './entities/reservationInfo.entity';
-import { ShowService } from 'src/show/show.service';
+import { ShowService } from '../show/show.service';
 import _ from 'lodash';
 import { Transactional } from 'typeorm-transactional';
-import { ConcertHallService } from 'src/concert-hall/concert-hall.service';
-import { UserService } from 'src/user/user.service';
+import { ConcertHallService } from '../concert-hall/concert-hall.service';
+import { UserService } from '../user/user.service';
 
 @Injectable()
 export class ReservationService {

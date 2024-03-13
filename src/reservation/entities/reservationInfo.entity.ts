@@ -1,7 +1,7 @@
 import { SeatInfo } from 'src/concert-hall/entities/seatInfo.entity';
-import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Reservation } from './reservation.entity';
-import { Show } from 'src/show/entities/show.entity';
+import { Show } from '../../show/entities/show.entity';
 
 @Entity({
   name: 'reservationInfos',

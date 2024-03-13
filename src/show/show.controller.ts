@@ -2,9 +2,9 @@ import { Body, Controller, Get, Param, Post, Query, UseGuards } from '@nestjs/co
 import { ShowService } from './show.service';
 import { RegisterShowDto } from './dto/registerShow.dto';
 import _ from 'lodash';
-import { RolesGuard } from 'src/auth/role.guard';
-import { Roles } from 'src/utils/roles.decorator';
-import { Role } from 'src/user/types/userRole.type';
+import { RolesGuard } from '../auth/role.guard';
+import { Roles } from '../utils/roles.decorator';
+import { Role } from '../user/types/userRole.type';
 
 @Controller('show')
 export class ShowController {

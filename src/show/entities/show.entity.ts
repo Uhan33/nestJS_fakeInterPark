@@ -1,7 +1,7 @@
-import { Reservation } from 'src/reservation/entities/reservation.entity';
-import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Reservation } from '../../reservation/entities/reservation.entity';
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { ConcertHall } from '../../concert-hall/entities/concertHall.entity';
-import { ReservationInfo } from 'src/reservation/entities/reservationInfo.entity';
+import { ReservationInfo } from '../../reservation/entities/reservationInfo.entity';
 
 @Entity({
   name: 'shows',

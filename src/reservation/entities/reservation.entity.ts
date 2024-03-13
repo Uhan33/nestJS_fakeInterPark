@@ -1,5 +1,5 @@
-import { Show } from 'src/show/entities/show.entity';
-import { User } from 'src/user/entities/user.entity';
+import { Show } from '../../show/entities/show.entity';
+import { User } from '../../user/entities/user.entity';
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { ReservationInfo } from './reservationInfo.entity';
 

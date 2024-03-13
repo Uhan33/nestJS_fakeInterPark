@@ -1,6 +1,6 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { ConcertHall } from './concertHall.entity';
-import { ReservationInfo } from 'src/reservation/entities/reservationInfo.entity';
+import { ReservationInfo } from '../../reservation/entities/reservationInfo.entity';
 
 @Entity({
   name: 'seatInfos',

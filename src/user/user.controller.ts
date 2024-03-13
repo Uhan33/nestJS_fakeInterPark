@@ -1,4 +1,4 @@
-import { UserInfo, UserPoint } from 'src/utils/userInfo.decorator';
+import { UserInfo, UserPoint } from '../utils/userInfo.decorator';
 
 import { Body, Controller, Get, Post, Res, UseGuards, Req } from '@nestjs/common';
 import { Response, Request } from 'express';
@@ -9,9 +9,7 @@ import { User } from './entities/user.entity';
 import { Point } from './entities/point.entity';
 import { UserService } from './user.service';
 import { RegisterDto } from './dto/register.dto';
-import { JwtGuard } from 'src/auth/guards';
-import { Roles } from 'src/utils/roles.decorator';
-import { Role } from './types/userRole.type';
+import { JwtGuard } from '../auth/guards';
 // import { AuthGuard } from 'src/auth/jwtAuth.guard';
 
 @Controller('user')

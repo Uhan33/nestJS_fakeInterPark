@@ -1,10 +1,10 @@
 import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { ReservationService } from './reservation.service';
 import { BuyTicketDto } from './dto/buyTicket.dto';
-import { JwtGuard } from 'src/auth/guards';
-import { UserInfo } from 'src/utils/userInfo.decorator';
-import { User } from 'src/user/entities/user.entity';
-import { Point } from 'src/user/entities/point.entity';
+import { JwtGuard } from '../auth/guards';
+import { UserInfo } from '../utils/userInfo.decorator';
+import { User } from '../user/entities/user.entity';
+import { Point } from '../user/entities/point.entity';
 
 @Controller('reservation')
 export class ReservationController {

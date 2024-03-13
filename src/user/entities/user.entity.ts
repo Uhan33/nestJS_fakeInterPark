@@ -2,8 +2,7 @@ import { Column, Entity, Index, OneToMany, OneToOne, PrimaryGeneratedColumn } fr
 
 import { Role } from '../types/userRole.type';
 import { Point } from './point.entity';
-import { Reservation } from 'src/reservation/entities/reservation.entity';
-import { Show } from 'src/show/entities/show.entity';
+import { Reservation } from '../../reservation/entities/reservation.entity';
 
 @Index('email', ['email'], { unique: true })
 @Entity({

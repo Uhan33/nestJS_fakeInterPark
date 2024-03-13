@@ -1,8 +1,8 @@
 import { Body, Controller, Post, UseGuards } from '@nestjs/common';
 import { ConcertHallService } from './concert-hall.service';
-import { RolesGuard } from 'src/auth/role.guard';
-import { Role } from 'src/user/types/userRole.type';
-import { Roles } from 'src/utils/roles.decorator';
+import { RolesGuard } from '../auth/role.guard';
+import { Role } from '../user/types/userRole.type';
+import { Roles } from '../utils/roles.decorator';
 import { ConcertHallRegisterDto } from './dto/concertHallRegister.Dto';
 
 @Controller('concert-hall')

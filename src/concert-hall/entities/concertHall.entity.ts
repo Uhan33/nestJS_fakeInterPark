@@ -1,4 +1,4 @@
-import { Show } from 'src/show/entities/show.entity';
+import { Show } from '../../show/entities/show.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { SeatInfo } from './seatInfo.entity';
 

@@ -3,9 +3,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Show } from './entities/show.entity';
 import { Like, Repository } from 'typeorm';
 import _ from 'lodash';
-import { ConcertHallService } from 'src/concert-hall/concert-hall.service';
-import { ReservationService } from 'src/reservation/reservation.service';
-import { ReservationInfo } from 'src/reservation/entities/reservationInfo.entity';
+import { ConcertHallService } from '../concert-hall/concert-hall.service';
+import { ReservationInfo } from '../reservation/entities/reservationInfo.entity';
 
 @Injectable()
 export class ShowService {

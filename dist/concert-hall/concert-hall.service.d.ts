@@ -14,4 +14,5 @@ export declare class ConcertHallService {
     }>;
     findConcertHall(id: number): Promise<ConcertHall>;
     findSeat(concertHallId: number, grade: string): Promise<SeatInfo>;
+    findAllSeatInfo(concertHallId: number): Promise<SeatInfo[]>;
 }

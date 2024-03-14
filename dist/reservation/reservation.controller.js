@@ -25,6 +25,9 @@ let ReservationController = class ReservationController {
     async buyTicket(buyTicketDto, info) {
         return await this.reservationService.buyTicket(info.user.id, info.point.point, buyTicketDto.showId, buyTicketDto.people, buyTicketDto.seatInfo);
     }
+    async remainSeatByShow(id) {
+        return await this.reservationService.remainSeatByShow(id);
+    }
     async myTicket(info) {
         return await this.reservationService.myTicket(info.user.id);
     }
@@ -45,6 +48,14 @@ __decorate([
     __metadata("design:paramtypes", [buyTicket_dto_1.BuyTicketDto, Object]),
     __metadata("design:returntype", Promise)
 ], ReservationController.prototype, "buyTicket", null);
+__decorate([
+    (0, common_1.Get)('remainSeat/:id'),
+    (0, common_1.UseGuards)(guards_1.JwtGuard),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], ReservationController.prototype, "remainSeatByShow", null);
 __decorate([
     (0, common_1.Get)('myTicket'),
     (0, common_1.UseGuards)(guards_1.JwtGuard),

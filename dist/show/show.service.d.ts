@@ -32,6 +32,7 @@ export declare class ShowService {
         reservationInfo: ReservationInfo[];
         concertHall: import("src/concert-hall/entities/concertHall.entity").ConcertHall;
     }>;
+    remainSeatByShow(id: number): Promise<void>;
     checkShowById(id: number): Promise<Show>;
     checkShowByName(showName: string): Promise<Show>;
 }

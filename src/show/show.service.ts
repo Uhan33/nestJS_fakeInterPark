@@ -85,7 +85,6 @@ export class ShowService {
         }
 
         const concertHall = await this.concertHallService.findConcertHall(showDetail.concertHallId);
-        // const countSeat = await this.reservationService.countSeat(id);
         const countSeat = await this.reservationInfoRepository.countBy({showId: id});
 
         const koreaTimeDiff: number = 9 * 60 * 60 * 1000;
@@ -97,6 +96,10 @@ export class ShowService {
             return { ...showDetail, "예약유무": "불가" };
         }
         return { ...showDetail, "예약유무": "가능" };
+    }
+
+    async remainSeatByShow(id: number) {
+        
     }
 
     async checkShowById(id: number) {

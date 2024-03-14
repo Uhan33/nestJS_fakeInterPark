@@ -22,6 +22,12 @@ export class ReservationController {
         )
     }
 
+    @Get('remainSeat/:id')
+    @UseGuards(JwtGuard)
+    async remainSeatByShow(@Param('id') id: number) {
+        return await this.reservationService.remainSeatByShow(id);
+    }
+
     @Get('myTicket')
     @UseGuards(JwtGuard)
     async myTicket(@UserInfo() info: {user: User}) {

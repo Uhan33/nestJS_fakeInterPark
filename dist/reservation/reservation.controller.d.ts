@@ -12,6 +12,7 @@ export declare class ReservationController {
         message: string;
         "\uC794\uC5EC \uD3EC\uC778\uD2B8": number;
     }>;
+    remainSeatByShow(id: number): Promise<any[]>;
     myTicket(info: {
         user: User;
     }): Promise<{

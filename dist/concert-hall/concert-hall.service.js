@@ -51,6 +51,9 @@ let ConcertHallService = class ConcertHallService {
     async findSeat(concertHallId, grade) {
         return await this.seatInfoRepository.findOneBy({ concertHallId, grade });
     }
+    async findAllSeatInfo(concertHallId) {
+        return await this.seatInfoRepository.findBy({ concertHallId });
+    }
 };
 exports.ConcertHallService = ConcertHallService;
 __decorate([

@@ -70,6 +70,20 @@ let ReservationService = class ReservationService {
         await this.reservationRepository.update({ id: newReservation.id }, { totalPrice: totalPrice });
         return { message: "예매 완료!", "잔여 포인트": remainPoint.point };
     }
+    async remainSeatByShow(showId) {
+        const show = await this.showService.checkShowById(showId);
+        const seatInfo = await this.concertHallService.findAllSeatInfo(show.concertHallId);
+        let result = [];
+        for (let seat of seatInfo) {
+            const maxSeat = Array.from({ length: seat.maxSeat }, (v, i) => i + 1);
+            let array = [];
+            const checkedSeat = await this.reservationInfoByGrade(showId, seat.grade);
+            checkedSeat.map(e => array.push(e.seatNumber));
+            const remainSeat = maxSeat.filter(x => !array.includes(x));
+            result.push({ "좌석 등급": seat.grade, ["좌석 가격"]: seat.price, ["남은 좌석"]: remainSeat });
+        }
+        return result;
+    }
     async myTicket(userId) {
         const tickets = await this.reservationRepository.find({
             relations: ['show', 'show.concertHall', 'reservationInfo'],
@@ -160,6 +174,9 @@ let ReservationService = class ReservationService {
     }
     async countSeat(showId) {
         return await this.reservationInfoRepository.countBy({ showId });
+    }
+    async reservationInfoByGrade(showId, seatGrade) {
+        return await this.reservationInfoRepository.findBy({ showId, seatGrade });
     }
 };
 exports.ReservationService = ReservationService;

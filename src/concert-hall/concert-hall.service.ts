@@ -48,4 +48,8 @@ export class ConcertHallService {
     async findSeat(concertHallId: number, grade: string) {
         return await this.seatInfoRepository.findOneBy({concertHallId, grade})
     }
+
+    async findAllSeatInfo(concertHallId: number) { 
+        return await this.seatInfoRepository.findBy({concertHallId})
+    }
 }

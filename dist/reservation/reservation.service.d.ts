@@ -15,6 +15,7 @@ export declare class ReservationService {
         message: string;
         "\uC794\uC5EC \uD3EC\uC778\uD2B8": number;
     }>;
+    remainSeatByShow(showId: number): Promise<any[]>;
     myTicket(userId: number): Promise<{
         ticketID: string;
         "\uACF5\uC5F0 \uC774\uB984": string;
@@ -45,4 +46,5 @@ export declare class ReservationService {
     checkTicket(id: string): Promise<Reservation>;
     checkSeat(showId: number, seatGrade: string, seatNumber: number): Promise<ReservationInfo>;
     countSeat(showId: number): Promise<number>;
+    reservationInfoByGrade(showId: number, seatGrade: string): Promise<ReservationInfo[]>;
 }

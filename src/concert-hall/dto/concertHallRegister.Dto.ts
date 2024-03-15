@@ -1,23 +1,26 @@
 import { IsArray, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class ConcertHallRegisterDto {
-    @IsString()
-    @IsNotEmpty({ message: '공연장 이름을 입력해주세요.' })
-    concertHallName: string;
-  
-    @IsNumber()
-    @IsNotEmpty({ message: '공연장 최대 수용 수를 입력해주세요.' })
-    maxSeat: number;
+  /**
+   * 공연장 이름
+   * @example "공연장"
+   */
+  @IsString()
+  @IsNotEmpty({ message: '공연장 이름을 입력해주세요.' })
+  concertHallName: string;
 
-    @IsArray()
-    @IsNotEmpty({ message: '좌석의 등급을 입력해주세요.' })
-    seatInfo: JSON[];
+  /**
+   * 공연장 최대 수용 인원 수
+   * @example 100
+   */
+  @IsNumber()
+  @IsNotEmpty({ message: '공연장 최대 수용 수를 입력해주세요.' })
+  maxSeat: number;
 
-    // @IsNumber()
-    // @IsNotEmpty({ message: '좌석의 가격을 입력해주세요.' })
-    // price: number[];
-
-    // @IsNumber()
-    // @IsNotEmpty({ message: '좌석의 최대 수용 수를 입력해주세요.' })
-    // maxSeatByGrade: number[];
-  }
+  /**
+   * 좌석 등급과 가격
+   */
+  @IsArray()
+  @IsNotEmpty({ message: '좌석의 등급과 가격, 좌석 등급 별 최대 인원 수를 입력해주세요.' })
+  seatInfo: JSON[];
+}

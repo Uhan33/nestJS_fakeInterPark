@@ -98,10 +98,6 @@ export class ShowService {
         return { ...showDetail, "예약유무": "가능" };
     }
 
-    async remainSeatByShow(id: number) {
-        
-    }
-
     async checkShowById(id: number) {
         return await this.showRepository.findOneBy({ id });
     }

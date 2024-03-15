@@ -12,14 +12,17 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
+
   @Column({ type: 'varchar', unique: true, nullable: false })
   email: string;
+
 
   @Column({ type: 'varchar', unique: true, nullable: false })
   nickname: string;
 
   @Column({ type: 'varchar', select: false, nullable: false })
   password: string;
+
 
   @Column({ type: 'varchar', nullable: false })
   name: string;

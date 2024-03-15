@@ -51,6 +51,8 @@ export class UserService {
       userId: newUser.id,
       point: 1000000,
     });
+
+    return { message: "회원가입 완료!"};
   }
 
   async login(email: string, password: string) {
